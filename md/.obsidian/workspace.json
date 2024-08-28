@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assets/常见问题与处理办法.md",
+                "file": "常见问题与处理办法.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/常见问题与处理办法.md",
+                "file": "常见问题与处理办法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "assets/常见问题与处理办法.md",
+                "file": "常见问题与处理办法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "assets/常见问题与处理办法.md"
+                "file": "常见问题与处理办法.md"
               }
             }
           }
@@ -159,11 +159,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f4c7fbd0b55d6a08",
+  "active": "3f73cb6a88cb7f90",
   "lastOpenFiles": [
     "assets/Pasted image 20240828135535.png",
     "8月产出.md",
-    "assets/常见问题与处理办法.md",
+    "常见问题与处理办法.md",
     "assets"
   ]
 }
