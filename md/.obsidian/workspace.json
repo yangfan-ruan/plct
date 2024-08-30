@@ -23,11 +23,9 @@
             "id": "f4c7fbd0b55d6a08",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "常见问题与处理办法.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/Pasted image 20240828135535.png"
               }
             }
           }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "常见问题与处理办法.md",
+                "file": "assets/Pasted image 20240828135535.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "常见问题与处理办法.md",
+                "file": "assets/Pasted image 20240828135535.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "常见问题与处理办法.md"
+                "file": "assets/Pasted image 20240828135535.png"
               }
             }
           }
@@ -159,11 +157,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3f73cb6a88cb7f90",
+  "active": "f4c7fbd0b55d6a08",
   "lastOpenFiles": [
+    "assets/Pasted image 20240828135535 1.png",
     "assets/Pasted image 20240828135535.png",
-    "8月产出.md",
     "常见问题与处理办法.md",
+    "8月产出.md",
     "assets"
   ]
 }
