@@ -1,50 +1,39 @@
 {
   "main": {
-    "id": "e21237ba2264908d",
+    "id": "36ae69584abdb7bd",
     "type": "split",
     "children": [
       {
-        "id": "2d24252bea122b51",
+        "id": "4f24a39607cfd2e3",
         "type": "tabs",
         "children": [
           {
-            "id": "e3095909ab80a9db",
+            "id": "a2b89c73abc7d8d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "8月产出.md",
+                "file": "常见问题与处理办法.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "f4c7fbd0b55d6a08",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "assets/Pasted image 20240828135535.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "e7bdb05aa1583a3d",
+    "id": "58b82c82a09b7300",
     "type": "split",
     "children": [
       {
-        "id": "b106b46b8b386e42",
+        "id": "5338327839d6bd15",
         "type": "tabs",
         "children": [
           {
-            "id": "3f73cb6a88cb7f90",
+            "id": "86c2dec701f21149",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -54,7 +43,7 @@
             }
           },
           {
-            "id": "b7be6d465d5fbdbb",
+            "id": "7b342f91d08b1281",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -69,7 +58,7 @@
             }
           },
           {
-            "id": "c8818765de58e480",
+            "id": "9658998d919731bc",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -83,21 +72,21 @@
     "width": 300
   },
   "right": {
-    "id": "56ba9cdfc87acf7f",
+    "id": "90501441b6df5b8b",
     "type": "split",
     "children": [
       {
-        "id": "b5dac33fe1dc967e",
+        "id": "35885dab2d1fdc53",
         "type": "tabs",
         "children": [
           {
-            "id": "b0a99e077c2b6b80",
+            "id": "844f6ecf613a00c2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/Pasted image 20240828135535.png",
-                "collapseAll": false,
+                "file": "常见问题与处理办法.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -108,19 +97,19 @@
             }
           },
           {
-            "id": "e9f9604f2b12afa7",
+            "id": "b640c656161b8319",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "assets/Pasted image 20240828135535.png",
+                "file": "常见问题与处理办法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "4564f5267976fb5c",
+            "id": "e4d69feda49d520f",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,16 +120,17 @@
             }
           },
           {
-            "id": "cc980c317bf2008a",
+            "id": "00336213efd5bd88",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "assets/Pasted image 20240828135535.png"
+                "file": "常见问题与处理办法.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -149,20 +139,21 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "f4c7fbd0b55d6a08",
+  "active": "00336213efd5bd88",
   "lastOpenFiles": [
-    "assets/Pasted image 20240828135535 1.png",
-    "assets/Pasted image 20240828135535.png",
-    "常见问题与处理办法.md",
+    "assets/Pasted image 20240830225113.png",
+    "mugen重要代码解释.md",
     "8月产出.md",
-    "assets"
+    "2024.5.10-mugen-testcase-陈志康.md",
+    "常见问题与处理办法.md",
+    "Pasted image 20240830224737.png"
   ]
 }
