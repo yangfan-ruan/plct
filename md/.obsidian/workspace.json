@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "常见问题与处理办法.md",
+                "file": "8月产出.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "常见问题与处理办法.md",
+                "file": "8月产出.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "常见问题与处理办法.md",
+                "file": "8月产出.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "常见问题与处理办法.md"
+                "file": "8月产出.md"
               }
             }
           }
@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,13 +146,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "00336213efd5bd88",
+  "active": "a2b89c73abc7d8d7",
   "lastOpenFiles": [
-    "assets/Pasted image 20240830225113.png",
     "mugen重要代码解释.md",
+    "assets/image-20240831165645573.png",
+    "assets/image-20240831165018270.png",
+    "assets/image-20240831164231093.png",
+    "assets/image-20240831163811991.png",
+    "常见问题与处理办法.md",
+    "assets/Pasted image 20240830225113.png",
     "8月产出.md",
     "2024.5.10-mugen-testcase-陈志康.md",
-    "常见问题与处理办法.md",
     "Pasted image 20240830224737.png"
   ]
 }
