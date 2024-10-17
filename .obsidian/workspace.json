@@ -1,0 +1,150 @@
+{
+  "main": {
+    "id": "82e4f49a42832259",
+    "type": "split",
+    "children": [
+      {
+        "id": "73821dc46de14f9d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a25d5840a19dd683",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "md/十月.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1f8e21cb2c6431a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "511d21ba36e5b082",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "638df705a767a32e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "97c85f8c38571e09",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 334.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "4bd26aa7b476167d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a1bf95ffebd85ad3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78b159b063fd51bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "md/十月.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 739.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "a25d5840a19dd683",
+  "lastOpenFiles": [
+    "md/外部可见产出记录.md",
+    "md/十月.md",
+    "md/obs系列.md",
+    "md/assets/image-20241007131154986.png",
+    "md/spec文件说明.md",
+    "md/mugen重要代码解释.md",
+    "md/未命名.md",
+    "未命名",
+    "md/常见问题与处理办法.md",
+    "md/mugen-testcase-陈志康.md",
+    "software-config/obsidian配置.md",
+    "books/心湖上的倒影：给实修者的指导.丹津·葩默.pdf",
+    "books/《learn-python-in-a-hard-way-main》/command-line/less",
+    "books/《learn-python-in-a-hard-way-main》/command-line/ex15.txt",
+    "books/《learn-python-in-a-hard-way-main》/command-line/ex13.txt",
+    "books/《learn-python-in-a-hard-way-main》/command-line/ex12.txt",
+    "books/《learn-python-in-a-hard-way-main》/command-line/ex.txt",
+    "books/《learn-python-in-a-hard-way-main》/command-line/cat-command.txt",
+    "books/《learn-python-in-a-hard-way-main》/README.md",
+    "books/《learn-python-in-a-hard-way-main》/ex03-calculate.py",
+    "books/《learn-python-in-a-hard-way-main》/ex02-comment.py",
+    "books/《learn-python3.5-from-0-main》/README.md",
+    "books/learn-python-in-a-hard-way-main/未命名思维导图.md",
+    "kiln_test/kiln_test/output/temperature_visualization1.png",
+    "重要参数.md",
+    "最终任务形成.md",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/Untitled.md",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921180737.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921170504.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921160219.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921160142.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921155255.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921152547.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/assets/Pasted image 20240921150544.png",
+    "books/《编码：隐匿在计算机软硬件背后的语言》/Untitled 1.md",
+    "books/《Google 开源项目风格指南》/7. 命名约定(done).md",
+    "books/《Google 开源项目风格指南》/3. 类.md",
+    "books/《Google 开源项目风格指南》/0. readme.md",
+    "books/《Google 开源项目风格指南》/未命名 1.md",
+    "命名.md",
+    "未命名 1.md",
+    "未命名.md",
+    "2024-09-03.md",
+    "命名  （描述性，少缩写）.md",
+    "未命名.canvas"
+  ]
+}
