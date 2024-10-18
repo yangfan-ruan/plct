@@ -4,20 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "73821dc46de14f9d",
+        "id": "d37398a6222ca015",
         "type": "tabs",
         "children": [
           {
-            "id": "a25d5840a19dd683",
+            "id": "31a9038b37d6b92b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "md/十月.md",
+                "file": "md/10月-compile-openjdk11系列.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "10月-compile-openjdk11系列"
             }
           }
         ]
@@ -40,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -55,15 +59,16 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 334.5,
-    "collapsed": true
+    "width": 334.5
   },
   "right": {
     "id": "4bd26aa7b476167d",
@@ -79,16 +84,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "md/十月.md"
-              }
+                "file": "md/10月-compile-openjdk11系列.md"
+              },
+              "icon": "lucide-list",
+              "title": "10月-compile-openjdk11系列 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 739.5,
-    "collapsed": true
+    "width": 410.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -99,15 +105,54 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a25d5840a19dd683",
+  "floating": {
+    "id": "de6a5beb14bb137b",
+    "type": "floating",
+    "children": [
+      {
+        "id": "613ede64091cb7ec",
+        "type": "window",
+        "children": [
+          {
+            "id": "df316da53a2042c3",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "367aa23c9cfd3931",
+                "type": "leaf",
+                "state": {
+                  "type": "image",
+                  "state": {
+                    "file": "md/assets/Pasted image 20241018102600.png"
+                  },
+                  "icon": "lucide-image",
+                  "title": "Pasted image 20241018102600"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 448,
+        "y": 156,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "31a9038b37d6b92b",
   "lastOpenFiles": [
+    "md/assets/Pasted image 20241018102600.png",
+    "md/10月-compile-openjdk11系列.md",
+    "md/未命名.md",
     "md/外部可见产出记录.md",
     "md/十月.md",
     "md/obs系列.md",
     "md/assets/image-20241007131154986.png",
     "md/spec文件说明.md",
     "md/mugen重要代码解释.md",
-    "md/未命名.md",
     "未命名",
     "md/常见问题与处理办法.md",
     "md/mugen-testcase-陈志康.md",
@@ -144,7 +189,6 @@
     "未命名 1.md",
     "未命名.md",
     "2024-09-03.md",
-    "命名  （描述性，少缩写）.md",
     "未命名.canvas"
   ]
 }
