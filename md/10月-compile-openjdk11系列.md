@@ -18,6 +18,10 @@
 >
 > https://www.mankier.com/7/pom_add_dep
 >
+> log中的软件源:https://repo.huaweicloud.com/repository/maven/
+>
+> 定立老师说的指导手册: https://docs.fedoraproject.org/en-US/java-packaging-howto/
+>
 > 黄:https://gitee.com/src-openeuler/apache-commons-math/pulls/12/files#null
 
 ```bash
@@ -35,168 +39,21 @@ export JAVA_HOME=%{_jvmdir}/java-11-openjdk
 
 * Sat Oct 12 2024 Yangfan Ruan <yangfan.oerv@isrc.iscas.ac.cn> - 1.1.10-3
 - compile with openjdk11
-
-
 ```
 
 # resteasy
-### 提问
-定立老师, 由于x86_64编译时间更短, 我先尝试在ebs上进行构建, 遇到问题还想请教一下
 
-#### 环境
-ebs软件包地址: [yangfanrani:openEuler-24.03-LTS:resteasy](https://eulermaker.compass-ci.openeuler.openatom.cn/package/overview?osProject=yangfanrani:openEuler-24.03-LTS&packageName=resteasy)
-软件源: openEuler-24.03-LTS系列(上述ebs软件包中可查看)
-个人fork用于构建的git仓库: [yangfan-ruan/resteasy](https://gitee.com/yangfan-ruan/resteasy/compare/2d54d731bc53448484a4726f553a7c58a5b22be2...f62f2aec98a9dabeb8351057ea591814cd473651)
+```bash
+less jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java
+```
 
-#### 现状
-1. ebs上使用默认openjdk1.8.0构建成功
-2. 添加以下关键三句程序报错`package javax.activation does not exist`和`package javax.xml.bind.annotation does not exist`, 以及`Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project resteasy-jaxrs`
-```bash
-BuildRequires:       java-11-openjdk-devel
-Requires:            java-11-openjdk
+![image-20241022095437008](./assets/image-20241022095437008.png)
 
-export JAVA_HOME=%{_jvmdir}/java-11-openjdk
-```
-	具体报错如下
-```bash
-2024-10-12 17:51:19 [ERROR] COMPILATION ERROR : 
-2024-10-12 17:51:19 [INFO] -------------------------------------------------------------
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[25,24] package javax.activation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[40,64] cannot find symbol
-2024-10-12 17:51:19   symbol: class DataSource
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[105,18] cannot find symbol
-2024-10-12 17:51:19   symbol:   class DataSource
-2024-10-12 17:51:19   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[170,37] cannot find symbol
-2024-10-12 17:51:19   symbol:   class DataSource
-2024-10-12 17:51:19   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[170,11] cannot find symbol
-2024-10-12 17:51:19   symbol:   class DataSource
-2024-10-12 17:51:19   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[212,24] cannot find symbol
-2024-10-12 17:51:19   symbol:   class DataSource
-2024-10-12 17:51:19   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[43,58] cannot find symbol
-2024-10-12 17:51:19   symbol:   class DataSource
-2024-10-12 17:51:19   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[5,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[6,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[7,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[16,2] cannot find symbol
-2024-10-12 17:51:19   symbol: class XmlRootElement
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[17,2] cannot find symbol
-2024-10-12 17:51:19   symbol: class XmlAccessorType
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[17,18] cannot find symbol
-2024-10-12 17:51:19   symbol: variable XmlAccessType
-...
-2024-10-12 17:51:19 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project resteasy-jaxrs: Compilation failure: Compilation failure: 
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[25,24] package javax.activation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[40,64] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol: class DataSource
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[105,18] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol:   class DataSource
-2024-10-12 17:51:19 [ERROR]   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[170,37] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol:   class DataSource
-2024-10-12 17:51:19 [ERROR]   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[170,11] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol:   class DataSource
-2024-10-12 17:51:19 [ERROR]   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[212,24] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol:   class DataSource
-2024-10-12 17:51:19 [ERROR]   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/plugins/providers/DataSourceProvider.java:[43,58] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol:   class DataSource
-2024-10-12 17:51:19 [ERROR]   location: class org.jboss.resteasy.plugins.providers.DataSourceProvider
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[5,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[6,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[7,33] package javax.xml.bind.annotation does not exist
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[16,2] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol: class XmlRootElement
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[17,2] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol: class XmlAccessorType
-2024-10-12 17:51:19 [ERROR] /root/rpmbuild/BUILD/Resteasy-3.0.19.Final/jaxrs/resteasy-jaxrs/src/main/java/org/jboss/resteasy/api/validation/ResteasyConstraintViolation.java:[17,18] cannot find symbol
-2024-10-12 17:51:19 [ERROR]   symbol: variable XmlAccessType
-2024-10-12 17:51:19 [ERROR] -> [Help 1]
-2024-10-12 17:51:19 [ERROR] 
-2024-10-12 17:51:19 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-2024-10-12 17:51:19 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
-2024-10-12 17:51:19 [ERROR] 
-2024-10-12 17:51:19 [ERROR] For more information about the errors and possible solutions, please read the following articles:
-2024-10-12 17:51:19 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-2024-10-12 17:51:19 [ERROR] 
-2024-10-12 17:51:19 [ERROR] After correcting the problems, you can resume the build with the command
-2024-10-12 17:51:19 [ERROR]   mvn <args> -rf :resteasy-jaxrs
-```
-#### 尝试
-1. 对于`package javax.activation does not exist`与`package javax.xml.bind.annotation does not exist`, 参考
-	- [java mvn: package javax.activation does not exist and mvn install not solving it](https://stackoverflow.com/questions/61367969/java-mvn-package-javax-activation-does-not-exist-and-mvn-install-not-solving-it)
-	- [Missing dependency javax.activation](https://github.com/mbechler/marshalsec/issues/15)
-	- [javax.xml.bind.annotation在jdk11中已被移除](https://blog.csdn.net/Crezfikbd/article/details/120397001)
-	- [Java 项目编译的时候提示 javax.xml.bind.annotation does not exist 错误](https://www.cnblogs.com/huyuchengus/p/16250557.html "发布于 2022-05-09 19:35")
-	- [package javax.xml.bind.annotation does not exist error [duplicate]](https://stackoverflow.com/questions/68892633/package-javax-xml-bind-annotation-does-not-exist-error)
-	在resteasy文件中添加:
-```bash
-%pom_add_dep javax.activation:activation:1.1.1
-%pom_add_dep javax.xml.bind:jaxb-api:2.3.0
-%pom_add_dep com.sun.xml.bind:jaxb-core:2.3.0
-%pom_add_dep com.sun.xml.bind:jaxb-impl:2.3.0
-```
-报错并没有变化
-2. 添加`BuildRequires: mvn(javax.activation:activation)报错找不到这个包
-3. 添加`jakarta.activation`不报错(资料里说这是javax.activation在更高版本JDK的替代), 但是构建依然失败,报错`package javax.activation does not exist`依然存在
-```bash
-	 BuildRequires:       mvn(jakarta.activation:jakarta.activation-api)
-	 `%pom_add_dep com.sun.activation:javax.activation:1.2.0
-```
-4. 在 [maven central repository](https://central.sonatype.com/search?q=javax.activation) 寻找所有与`javax.activation`有关的包(共13个), 添加其依赖
-```bash
-BuildRequires:       mvn(one.gfw:javax.activation-api)
-BuildRequires:       mvn(javax.activation:javax.activation-api)
-BuildRequires:       mvn(com.sun.activation:javax.activation)
-BuildRequires:       mvn(org.glassfish:javax.activation)
-BuildRequires:       mvn(org.eclipse.jetty.orbit:javax.activation)
-BuildRequires:       mvn(org.apache.sling:org.apache.sling.javax.activation)
-BuildRequires:       mvn(javax.activation:activation)
-BuildRequires:       mvn(com.guicedee.services:javax.activation)
-BuildRequires:       mvn(org.kie.modules:javax-activation-api-main)
-BuildRequires:       mvn(com.github.livesense:org.liveSense.fragment.javax.activation-jre-1.6)
-BuildRequires:       mvn(org.wso2.orbit.javax.activation:activation)
-BuildRequires:       mvn(com.jwebmp.thirdparty:javax.activation)
-BuildRequires:       mvn(eu.ocathain.javax.activation:activation)
-```
-```bash
-%pom_add_dep one.gfw:javax.activation-api:1.2.0
-%pom_add_dep javax.activation:javax.activation-api:1.2.0
-%pom_add_dep com.sun.activation:javax.activation:1.2.0
-%pom_add_dep org.glassfish:javax.activation:10.0-b28
-%pom_add_dep org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233
-%pom_add_dep org.apache.sling:org.apache.sling.javax.activation:0.3.0
-%pom_add_dep javax.activation:activation:1.1.1
-%pom_add_dep com.guicedee.services:javax.activation:1.2.2.1-jre17
-%pom_add_dep org.kie.modules:javax-activation-api-main:6.5.0.Final
-%pom_add_dep com.github.livesense:org.liveSense.fragment.javax.activation-jre-1.6:1.0.5
-%pom_add_dep org.wso2.orbit.javax.activation:activation:1.1.1.wso2v4
-%pom_add_dep com.jwebmp.thirdparty:javax.activation:0.68.0.1
-%pom_add_dep eu.ocathain.javax.activation:activation:1.1.1
-```
-当`BuildRequires:`部分添加时,构建很快停止,报错上述13个包全部找不到
-![](assets/Pasted%20image%2020241018102600.png)
-当只添加`%pom_add_dep`部分时, 报错`package javax.activation does not exist`依然存在
-5. 对于`Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project resteasy-jaxrs`
-尝试使用更新插件的办法(版本在 [maven central repository](https://central.sonatype.com/search?q=javax.activation) 确认)
-```
-%pom_remove_plugin -r :maven-compiler-plugin
-%pom_add_plugin org.apache.maven.plugins:maven-compiler-plugin:3.13.0
-```
-依然无效
 
-#### 问题
-1. maven中相关的软件是从项目中给定的软件源安装的,还是从maven自己的源(比如  [maven central repository](https://central.sonatype.com/search?q=javax.activation) )安装的?
-2. 是不是除了%pom_add_dep, 还有一些别的操作我没有添加导致迟迟找不到`javax.activation`等包呢
-3. 或者是`javax.activation`等包也需要先用gdk11编译一下吗
-,
-### 代码解释
+
+
+
+1. 代码解释
 ```bash
 # `%`开头的部分是宏或指令，它们用于处理变量、配置编译和安装过程。
 %global namedreltag .Final # 这行定义了一个全局变量`namedreltag`，值为`.Final`。它可以在文件的其他部分被引用，表示版本的后缀。
